@@ -5,7 +5,13 @@
 ## Makefile
 ##
 
-SRC	=	src/main/main.c
+SRC	=	src/main/main.c	\
+		lib/my/my_putchar.c	\
+		lib/my/my_putstr.c	\
+		lib/my/my_put_nbr.c	\
+		lib/my/my_strlen.c	\
+		lib/my/my_strcpy.c	\
+		lib/my/mini_printf.c
 
 OBJ	=	$(SRC:.c=.o)
 
