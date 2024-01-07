@@ -11,7 +11,8 @@ SRC	=	src/main/main.c	\
 		lib/my/my_put_nbr.c	\
 		lib/my/my_strlen.c	\
 		lib/my/my_strcpy.c	\
-		lib/my/mini_printf.c
+		lib/my/mini_printf.c	\
+		lib/my/my_strdup.c
 
 OBJ	=	$(SRC:.c=.o)
 
