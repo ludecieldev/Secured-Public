@@ -64,4 +64,5 @@ dkms.conf
 .idea/uiDesigner.xml
 .idea/libraries
 vgcore.*
+.vscode/*
 ```
