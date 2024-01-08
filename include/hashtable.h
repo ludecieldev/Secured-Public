@@ -16,7 +16,7 @@ typedef struct hasharray_s {
 
 typedef struct hashtable_s {
     int len;
-    long unsined int (*hash)(char *, int) hash;
+    int (*hash)(char *, int) hash;
     hasharray_t **array;
 } hashtable_t;
 
