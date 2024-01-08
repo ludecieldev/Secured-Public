@@ -14,10 +14,9 @@ int hash(char *key, int len)
     long long int hash = get_ascii_value(key);
 
     hash *= hash;
-    hash *= len;
-    while (int_count(hash) < 10)
-        hash *= hash;
-    while (int_count(hash) != 10)
+    while (int_count(hash) < 7)
+        hash *= 3;
+    while (int_count(hash) > 7)
         hash /= 10;
     return ((int)hash);
 }

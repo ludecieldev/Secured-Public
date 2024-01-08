@@ -65,5 +65,5 @@ dkms.conf
 .idea/libraries
 vgcore.*
 .vscode/*
-src/main/main.c
+main.c
 ```
