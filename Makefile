@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-SRC	=	src/main/main.c	\
+SRC	=	src/hash/hash.c	\
 		lib/my/my_putchar.c	\
 		lib/my/my_putstr.c	\
 		lib/my/my_put_nbr.c	\
@@ -14,8 +14,7 @@ SRC	=	src/main/main.c	\
 		lib/my/mini_printf.c	\
 		lib/my/my_strdup.c	\
 		lib/my/int_count.c	\
-		lib/my/get_ascii_value.c	\
-		src/hash/hash.c
+		lib/my/get_ascii_value.c
 
 OBJ	=	$(SRC:.c=.o)
 
