@@ -12,11 +12,14 @@
 int hash(char *key, int len)
 {
     long long int hash = get_ascii_value(key);
+    char *str = my_revstr(key);
+    int ascii_rev = get_ascii_value(str);
 
-    hash *= hash;
+    hash += ascii_rev;
+    hash = hash * (ascii_rev / (len) + hash);
     while (int_count(hash) < 7)
-        hash *= 3;
+        hash *= 7;
     while (int_count(hash) > 7)
         hash /= 10;
-    return ((int)hash);
+    return ((int)(hash));
 }
