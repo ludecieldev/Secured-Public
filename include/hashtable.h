@@ -8,8 +8,16 @@
 #ifndef HASHTABLE_H
     #define HASHTABLE_H
 
+typedef struct hasharray_s {
+    char *key;
+    char *value;
+    struct hasharray_s *next;
+} hasharray_t;
+
 typedef struct hashtable_s {
-    // Your code here
+    int len;
+    long unsined int (*hash)(char *, int) hash;
+    hasharray_t **array;
 } hashtable_t;
 
 // Hash function

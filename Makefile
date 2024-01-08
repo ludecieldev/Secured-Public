@@ -16,20 +16,20 @@ SRC	=	src/main/main.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	organized
+NAME	=	libhashtable.a
 
 CFLAGS	+=	-W -Wall -Wextra -g3
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(OBJ)
+	ar rc  $(NAME) $(OBJ) ../../.
 
 clean:
 	rm -f $(OBJ)
 
 fclean:	clean
-	rm -f $(NAME)
+	rm -f $(OBJ)
 	rm -f vgcore.*
 
 re:	fclean all
