@@ -19,5 +19,7 @@ int my_putstr(char const *str);
 void my_putchar(char c);
 int my_strlen(char const *str);
 int my_strcmp(char const *s1, char const *s2);
+int get_ascii_value(char *str);
+int int_count(int nb);
 
 #endif //B_CPE_110_LIL_1_1_SECURED_ALEXANDRE_GARBE_SECURED_H

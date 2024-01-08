@@ -12,7 +12,10 @@ SRC	=	src/main/main.c	\
 		lib/my/my_strlen.c	\
 		lib/my/my_strcpy.c	\
 		lib/my/mini_printf.c	\
-		lib/my/my_strdup.c
+		lib/my/my_strdup.c	\
+		lib/my/int_count.c	\
+		lib/my/get_ascii_value.c	\
+		src/hash/hash.c
 
 OBJ	=	$(SRC:.c=.o)
 
