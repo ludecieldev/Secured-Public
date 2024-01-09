@@ -17,9 +17,10 @@ int hash(char *key, int len)
 
     hash += ascii_rev;
     hash = hash * (ascii_rev / (len) + hash);
+
     while (int_count(hash) < 7)
-        hash *= 7;
+        hash *= 3;
     while (int_count(hash) > 7)
         hash /= 10;
-    return ((int)(hash));
+    return ((unsigned int)(hash));
 }
