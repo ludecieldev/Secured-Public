@@ -10,11 +10,13 @@ SRC	=	src/hash/hash.c	\
 		lib/my/my_putstr.c	\
 		lib/my/my_put_nbr.c	\
 		lib/my/my_strlen.c	\
-		lib/my/my_strcpy.c	\
 		lib/my/mini_printf.c	\
 		lib/my/my_strdup.c	\
 		lib/my/int_count.c	\
-		lib/my/get_ascii_value.c
+		lib/my/get_ascii_value.c	\
+		lib/my/my_getnbr.c	\
+		lib/my/my_strcmp.c	\
+		lib/my/my_revstr.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -25,7 +27,7 @@ CFLAGS	+=	-W -Wall -Wextra -g3
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	ar rc  $(NAME) $(OBJ) ../../.
+	ar rc  $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
