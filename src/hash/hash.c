@@ -9,18 +9,23 @@
 
 #include "../../include/secured.h"
 
+int mid_square(long long unsigned int nb)
+{
+    while (int_count(nb) > 6) {
+        nb = nb / 10;
+    }
+    return (unsigned int)nb;
+}
+
 int hash(char *key, int len)
 {
-    long long int hash = get_ascii_value(key);
-    char *str = my_revstr(key);
-    int ascii_rev = get_ascii_value(str);
+    unsigned int hash = 5381;
+    int c;
 
-    hash += ascii_rev;
-    hash = hash * (ascii_rev / (len) + hash);
-
-    while (int_count(hash) < 7)
-        hash *= 3;
-    while (int_count(hash) > 7)
-        hash /= 10;
-    return ((unsigned int)(hash));
+    do {
+        c = *key;
+        *key++;
+        hash = ((hash << 5) + hash) + c;
+    } while (c);
+    return mid_square(hash);
 }
