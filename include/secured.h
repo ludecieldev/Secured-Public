@@ -18,7 +18,7 @@ int my_put_nbr(int nb);
 int my_putstr(char const *str);
 void my_putchar(char c);
 int my_strlen(char const *str);
-int my_strcmp(char const *s1, char const *s2);
+int my_strcmp(char *s1, char *s2);
 int get_ascii_value(char *str);
 int int_count(int nb);
 char *my_revstr(char *str);
