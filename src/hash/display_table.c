@@ -12,7 +12,9 @@
 void ht_dump(hashtable_t *ht)
 {
     for (int i = 0; i < ht->len; i++) {
-        if (ht->array[i])
-            mini_printf("[%d]: ", i);
+        if (ht->array[i]) {
+            mini_printf("[%d]:\n", i);
+            mini_printf("> %s - %s ", ht->array[i]->key, ht->array[i]->value);
+        }
     }
 }

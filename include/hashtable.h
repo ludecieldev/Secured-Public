@@ -10,6 +10,7 @@
 
 typedef struct hasharray_s {
     char *key;
+    int hashkey;
     char *value;
     struct hasharray_s *next;
 } hasharray_t;
