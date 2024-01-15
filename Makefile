@@ -16,7 +16,14 @@ SRC	=	src/hash/hash.c	\
 		lib/my/get_ascii_value.c	\
 		lib/my/my_getnbr.c	\
 		lib/my/my_strcmp.c	\
-		lib/my/my_revstr.c
+		lib/my/my_revstr.c	\
+		src/hash/hash.c	\
+		src/hash/delete_hashtable.c	\
+		src/hash/display_table.c	\
+		src/hash/ht_delete.c	\
+		src/hash/ht_insert.c	\
+		src/hash/ht_search.c	\
+		src/hash/new_hastable.c
 
 OBJ	=	$(SRC:.c=.o)
 
