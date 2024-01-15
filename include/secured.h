@@ -22,5 +22,6 @@ int my_strcmp(char *s1, char *s2);
 int get_ascii_value(char *str);
 int int_count(int nb);
 char *my_revstr(char *str);
+char *my_strdup(char *str);
 
 #endif //B_CPE_110_LIL_1_1_SECURED_ALEXANDRE_GARBE_SECURED_H
