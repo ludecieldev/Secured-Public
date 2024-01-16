@@ -9,15 +9,14 @@
 
 #include "../../include/secured.h"
 
-hashtable_t *ht_create(int size)
+hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 {
-    hashtable_t *hashtable = malloc(sizeof(hashtable_t));
+    hashtable_t *ht = malloc(sizeof(hashtable_t));
 
-    if (size < 1)
-        return NULL;
-    hashtable->array = malloc(sizeof(hasharray_t *) * size);
-    for (int i = 0; i < size; i++)
-        hashtable->array[i] = NULL;
-    hashtable->len = size;
-    return hashtable;
+    ht->len = len;
+    ht->hash = hash;
+    ht->array = malloc(sizeof(hasharray_t *) * len);
+    for (int i = 0; i < len; i++)
+        ht->array[i] = NULL;
+    return (ht);
 }
