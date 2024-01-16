@@ -34,7 +34,7 @@ CFLAGS	+=	-W -Wall -Wextra -g3
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	ar rc  $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
