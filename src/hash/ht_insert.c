@@ -30,6 +30,5 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     item->next = NULL;
     index = item->hashkey % ht->len;
     insert_at_index(ht->array, item, index);
-    free(item);
     return (0);
 }
