@@ -13,6 +13,10 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 {
     hashtable_t *ht = malloc(sizeof(hashtable_t));
 
+    if (ht == NULL) {
+        free(ht);
+        return 84;
+    }
     ht->len = len;
     ht->hash = hash;
     ht->array = malloc(sizeof(hasharray_t *) * len);
