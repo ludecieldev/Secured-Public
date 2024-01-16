@@ -23,4 +23,3 @@ char *ht_search(hashtable_t *ht, char *key)
     }
     return (NULL);
 }
-
