@@ -9,7 +9,6 @@
 
 #include "../../include/secured.h"
 
-
 int ht_delete(hashtable_t *ht, char *key)
 {
     int hashkey = ht->hash(key, ht->len);
