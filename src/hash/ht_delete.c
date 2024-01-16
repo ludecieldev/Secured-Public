@@ -9,27 +9,33 @@
 
 #include "../../include/secured.h"
 
+
 int ht_delete(hashtable_t *ht, char *key)
 {
-    int index = 0;
-    hasharray_t *array = NULL;
-    hasharray_t *prev = NULL;
+    int hashkey = ht->hash(key, ht->len);
+    int index = hashkey % ht->len;
+    hasharray_t *array = ht->array[index];
+    hasharray_t *next = NULL;
 
-    index = ht->hash(key, ht->len);
-    array = ht->array[index];
-    while (array != NULL) {
-        if (my_strcmp(array->key, key) == 0) {
-            if (prev == NULL)
-                ht->array[index] = array->next;
-            else
-                prev->next = array->next;
-            free(array->key);
-            free(array->value);
-            free(array);
-            return (0);
+    if (array == NULL)
+        return 84;
+    if (my_strcmp(array->key, key) == 0) {
+        ht->array[index] = array->next;
+        free(array->key);
+        free(array->value);
+        free(array);
+        return 0;
+    }
+    while (array->next != NULL) {
+        if (my_strcmp(array->next->key, key) == 0) {
+            next = array->next->next;
+            free(array->next->key);
+            free(array->next->value);
+            free(array->next);
+            array->next = next;
+            return 0;
         }
-        prev = array;
         array = array->next;
     }
-    return (84);
+    return 84;
 }
