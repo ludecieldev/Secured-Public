@@ -17,7 +17,7 @@ void ht_dump(hashtable_t *ht)
         array = ht->array[i];
         mini_printf("[%d]:\n", i);
         while (array != NULL) {
-            mini_printf("%s : %s\n", array->key, array->value);
+            mini_printf("> %s - %s\n", array->key, array->value);
             array = array->next;
         }
     }
