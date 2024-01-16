@@ -11,10 +11,14 @@
 
 void ht_dump(hashtable_t *ht)
 {
+    hasharray_t *array = NULL;
+
     for (int i = 0; i < ht->len; i++) {
-        if (ht->array[i]) {
-            mini_printf("[%d]:\n", i);
-            mini_printf("> %s - %s ", ht->array[i]->key, ht->array[i]->value);
+        array = ht->array[i];
+        mini_printf("[%d]:\n", i);
+        while (array != NULL) {
+            mini_printf("%s : %s\n", array->key, array->value);
+            array = array->next;
         }
     }
 }
