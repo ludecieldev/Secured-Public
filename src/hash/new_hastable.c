@@ -13,9 +13,9 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 {
     hashtable_t *ht = malloc(sizeof(hashtable_t));
 
-    if (ht == NULL) {
+    if (ht == NULL || len <= 0) {
         free(ht);
-        return 84;
+        return NULL;
     }
     ht->len = len;
     ht->hash = hash;
