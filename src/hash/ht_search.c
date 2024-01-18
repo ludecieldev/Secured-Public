@@ -14,6 +14,8 @@ char *ht_search(hashtable_t *ht, char *key)
     int index = 0;
     hasharray_t *array = NULL;
 
+    if (ht == NULL || key == NULL)
+        return (NULL);
     index = ht->hash(key, ht->len) % ht->len;
     array = ht->array[index];
     while (array != NULL) {

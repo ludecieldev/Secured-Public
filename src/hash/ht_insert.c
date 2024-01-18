@@ -24,6 +24,8 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
         free(item);
         return 84;
     }
+    if (ht == NULL || key == NULL || value == NULL)
+        return 84;
     item->key = my_strdup(key);
     item->hashkey = ht->hash(key, ht->len);
     item->value = my_strdup(value);

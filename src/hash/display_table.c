@@ -13,6 +13,8 @@ void ht_dump(hashtable_t *ht)
 {
     hasharray_t *array = NULL;
 
+    if (ht == NULL)
+        return;
     for (int i = 0; i < ht->len; i++) {
         array = ht->array[i];
         mini_printf("[%d]:\n", i);

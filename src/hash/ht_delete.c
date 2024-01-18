@@ -25,6 +25,8 @@ int ht_delete(hashtable_t *ht, char *key)
     hasharray_t *array = NULL;
     hasharray_t *prev = NULL;
 
+    if (ht == NULL || key == NULL)
+        return (84);
     index = ht->hash(key, ht->len) % ht->len;
     array = ht->array[index];
     while (array != NULL) {
